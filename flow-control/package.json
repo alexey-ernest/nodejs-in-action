@@ -1,0 +1,16 @@
+{
+  "name": "flow-control-example",
+  "version": "1.0.0",
+  "description": "Flow Control example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexey Melnikov",
+  "license": "MIT",
+  "dependencies": {
+    "htmlparser": "^1.7.7",
+    "nimble": "0.0.2",
+    "request": "^2.55.0"
+  }
+}
