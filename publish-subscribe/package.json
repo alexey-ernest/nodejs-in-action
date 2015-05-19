@@ -1,0 +1,11 @@
+{
+  "name": "publish-subscribe",
+  "version": "0.0.0",
+  "description": "Publish Subscribe example using EventEmitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexey Melnikov",
+  "license": "MIT"
+}

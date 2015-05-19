@@ -1,0 +1,11 @@
+{
+  "name": "event-emitter-example",
+  "version": "0.0.0",
+  "description": "Event Emitter Example from Node.js in Action book",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexey Melnikov",
+  "license": "MIT"
+}
