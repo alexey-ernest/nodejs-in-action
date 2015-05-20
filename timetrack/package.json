@@ -1,0 +1,14 @@
+{
+  "name": "timetrack",
+  "version": "1.0.0",
+  "description": "Timetrack example application using MySql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexey Melnikov",
+  "license": "MIT",
+  "dependencies": {
+    "mysql": "^2.6.2"
+  }
+}
