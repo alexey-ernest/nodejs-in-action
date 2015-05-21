@@ -1,0 +1,19 @@
+{
+  "name": "redis-example",
+  "version": "1.0.0",
+  "description": "Redis with Node.js example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "redis",
+    "node.js",
+    "example"
+  ],
+  "author": "Alexey Melnikov",
+  "license": "MIT",
+  "dependencies": {
+    "redis": "^0.12.1"
+  }
+}

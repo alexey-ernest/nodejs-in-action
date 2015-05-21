@@ -1,0 +1,18 @@
+{
+  "name": "redis-chat",
+  "version": "1.0.0",
+  "description": "Redis based chat example using Redis Channels",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "redis",
+    "chat"
+  ],
+  "author": "Alexey Melnikov",
+  "license": "MIT",
+  "dependencies": {
+    "redis": "^0.12.1"
+  }
+}
