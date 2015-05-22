@@ -2,20 +2,14 @@ var net = require('net');
 var redis = require('redis');
 
 var server = net.createServer(function(socket) {
-    var publisher;
-    var subscriber;
-
-    socket.on('connect', function () {
-        subscriber = redis.createClient();
-        subscriber.subscribe('main_chat_room');
-
-        subscriber.on('message', function (channel, message) {
-            socket.write('Channel ' + channel + ': ' + message);
-        });
-
-        publisher = redis.createClient();
+    var publisher = redis.createClient();
+    var subscriber = redis.createClient();
+ 
+    subscriber.subscribe('main_chat_room');
+    subscriber.on('message', function (channel, message) {
+        socket.write('Channel ' + channel + ': ' + message);
     });
-
+    
     socket.on('data', function (data) {
         publisher.publish('main_chat_room', data);
     });
