@@ -1,0 +1,19 @@
+{
+  "name": "multi-error-handling",
+  "version": "1.0.0",
+  "description": "Multiple error-handling middleware example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "connect",
+    "node.js",
+    "error-handling"
+  ],
+  "author": "Alexey Melnikov",
+  "license": "MIT",
+  "dependencies": {
+    "connect": "^3.3.5"
+  }
+}
