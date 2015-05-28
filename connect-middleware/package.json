@@ -9,6 +9,7 @@
   "author": "Alexey Melnikov",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.12.4",
     "connect": "^3.3.5",
     "cookies": "^0.5.0"
   }
