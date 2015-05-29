@@ -6,7 +6,7 @@ var app = connect()
     .use(function (req, res) {       
         var cookies = new Cookies(req, res, keys);
         
-        if ( req.url == "/set" ) {
+        if (req.url == "/set") {
             var cookieValue = 'cookieValue';
             cookies.set('cookieName', cookieValue, { signed: true });
 
