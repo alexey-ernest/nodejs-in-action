@@ -1,22 +1,11 @@
 var connect = require('connect');
-var Cookies = require('cookies');
-var keys = ['tobi is a cool ferret'];
+var cookieParser = require('cookie-parser');
 
 var app = connect()
+    .use(cookieParser('tobi is a cool ferret'))
     .use(function (req, res) {       
-        var cookies = new Cookies(req, res, keys);
-        
-        if (req.url == "/set") {
-            var cookieValue = 'cookieValue';
-            cookies.set('cookieName', cookieValue, { signed: true });
-
-            res.writeHead( 302, { "Location": "/" } );
-            return res.end("Now let's check.");
-        }
-
-        var cookie = cookies.get('cookieName', { signed: true });
-        
-        res.writeHead( 200, { "Content-Type": "text/plain" } );
-        res.end(cookie);
-
+        console.log(req.cookies);
+        console.log(req.signedCookies);
+        res.setHeader('Set-Cookie', 'name=luna');
+        res.end('hello\n');
     }).listen(3000);
