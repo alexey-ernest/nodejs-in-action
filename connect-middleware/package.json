@@ -12,6 +12,7 @@
     "body-parser": "^1.12.4",
     "connect": "^3.3.5",
     "connect-query": "^0.2.0",
+    "connect-redis": "^2.3.0",
     "morgan": "^1.5.3",
     "serve-favicon": "^2.2.1"
   }
