@@ -29,3 +29,6 @@ node_modules
 # File Watcher data
 file-watcher/done
 file-watcher/watch
+
+# Express Photo Stock upload
+express/uploads
