@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var messages = require('./lib/messages');
+var user = require('./lib/middleware/user');
 
 var register = require('./routes/register');
 var login = require('./routes/login');
@@ -25,8 +26,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser('secret code'));
 app.use(session());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(user);
 app.use(messages);
+
 app.use('/register', register);
 app.use('/login', login);
 app.use('/logout', logout);
