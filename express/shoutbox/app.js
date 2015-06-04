@@ -7,13 +7,12 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var register = require('./routes/register');
-var messages = require('./routes/messages');
+var messages = require('./lib/messages');
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirna
-  me, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public

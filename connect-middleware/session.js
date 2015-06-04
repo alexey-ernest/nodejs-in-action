@@ -1,5 +1,7 @@
 var connect = require('connect');
 var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var favicon = require('serve-favicon');
 
 var session = require('express-session');
 var hour = 3600000;
@@ -9,6 +11,8 @@ var sessionOpts = {
 };
 
 var app = connect()
+    .use(favicon(__dirname + '/public/favicon.ico'))
+    .use(logger('dev'))
     .use(cookieParser('keyboard cat'))
     .use(session(sessionOpts))
     .use(function (req, res, next) {
