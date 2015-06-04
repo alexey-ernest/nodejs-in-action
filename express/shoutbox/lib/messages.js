@@ -3,7 +3,7 @@ var res = express.response;
 
 res.message = function (msg, type) {
     type = type || 'info';
-    var sess = this.session;
+    var sess = this.req.session;
     sess.messages = sess.messages || [];
     sess.messages.push({ type: type, string: msg });
 };

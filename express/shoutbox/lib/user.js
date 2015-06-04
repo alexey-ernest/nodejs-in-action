@@ -2,8 +2,6 @@ var bcrypt = require('bcrypt-nodejs');
 var redis = require('redis');
 var db = redis.createClient(6379, 'clickubuntu.cloudapp.net');
 
-module.exports = User;
-
 function User(obj) {
     for (var key in obj) {
         this[key] = obj[key];
@@ -52,25 +50,25 @@ User.prototype.hashPassword = function (fn) {
     });
 };
 
-User.prototype.getByName = function (name, fn) {
+User.getByName = function (name, fn) {
     User.getId(name, function (err, id) {
         if (err) return fn(err);
         User.get(id, fn);
     });
 };
 
-User.prototype.getId = function (name, fn) {
+User.getId = function (name, fn) {
     db.get('user:id:' + name, fn);
 };
 
-User.prototype.get = function (id, fn) {
+User.get = function (id, fn) {
     db.hgetall('user:' + id, function (err, user) {
         if (err) return fn(err);
-        fn(null, new User(user);
+        fn(null, new User(user));
     });
 };
 
-User.prototype.authenticate = function (name, pass, fn) {
+User.authenticate = function (name, pass, fn) {
     User.getByName(name, function (err, user) {
         if (err) return fn(err);
         if (!user.id) return fn();
@@ -81,3 +79,5 @@ User.prototype.authenticate = function (name, pass, fn) {
         });
     });
 };
+
+module.exports = User;
