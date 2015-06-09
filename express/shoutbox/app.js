@@ -11,6 +11,7 @@ var user = require('./lib/middleware/user');
 var register = require('./routes/register');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
+var entries = require('./routes/entries');
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(user);
 app.use(messages);
 
+app.use('/', entries);
 app.use('/register', register);
 app.use('/login', login);
 app.use('/logout', logout);
