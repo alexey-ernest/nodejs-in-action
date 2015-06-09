@@ -4,6 +4,7 @@ var entries = require('../lib/middleware/entries');
 var router = express.Router();
 var user = require('../lib/middleware/user');
 var page = require('../lib/middleware/page');
+var routes = require('../routes');
 
 var User = require('../lib/user');
 var Entry = require('../lib/entry');
@@ -19,9 +20,7 @@ router.get('/user/:id', function (req, res, next) {
     User.get(req.params.id, function (err, user) {
         if (err) return next(err);
         if (!user.id) {
-            var err = new Error('Not Found');
-            err.status = 404;
-            return next(err);
+            return routes.notFound(req, res);
         }
         res.json(user);
     });
