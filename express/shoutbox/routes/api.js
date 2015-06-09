@@ -35,7 +35,15 @@ router.get('/entries/:page?',
         var page = req.page;
         Entry.getRange(page.from, page.to, function (err, entries) {
             if (err) return next(err);
-            res.json(entries);
+            
+            res.format({
+                json: function () {
+                    res.send(entries);
+                },
+                xml: function () {
+                    res.render('entries/xml', {entries: entries});
+                }
+            });
         });
     }
 );
