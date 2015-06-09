@@ -1,17 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var Entry = require('../lib/entry');
 var validate = require('../lib/middleware/validate');
-
-router.get('/', function(req, res, next) {
-    Entry.getRange(0, -1, function (err, entries) {
-        if (err) return next(err);
-        res.render('entries', {
-            title: 'Entries',
-            entries: entries
-        });
-    });
-});
+var page = require('../lib/middleware/page');
+var Entry = require('../lib/entry');
 
 router.get('/post', function (req, res) {
     res.render('post', { title: 'Post' });
@@ -35,5 +26,16 @@ router.post('/post',
         });
     }
 );
+
+router.get('/:page?', page(Entry.count, 5), function(req, res, next) {
+    var page = req.page;
+    Entry.getRange(page.from, page.to, function (err, entries) {
+        if (err) return next(err);
+        res.render('entries', {
+            title: 'Entries',
+            entries: entries
+        });
+    });
+});
 
 module.exports = router;
