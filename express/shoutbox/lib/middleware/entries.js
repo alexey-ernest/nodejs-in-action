@@ -25,6 +25,9 @@ exports.submit = function (req, res, next) {
 
 exports.list = function(req, res, next) {
     var page = req.page;
+    var err = new Error('database connection failed');
+    err.type = 'database';
+    return next(err);
     Entry.getRange(page.from, page.to, function (err, entries) {
         if (err) return next(err);
         res.render('entries', {
