@@ -1,8 +1,8 @@
 module.exports = function (fn, perpage) {
     perpage = perpage || 10;
     return function (req, res, next) {
-        console.log(req.params);
         var page = Math.max(parseInt(req.params.page || '1', 10), 1) - 1;
+        page = page || 0;
         fn(function (err, total) {
             if (err) return next(err);
 
