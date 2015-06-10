@@ -17,6 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "github-flavored-markdown": "^1.0.1",
-    "hogan": "^1.0.2"
+    "hogan": "^1.0.2",
+    "jade": "^1.10.0"
   }
 }

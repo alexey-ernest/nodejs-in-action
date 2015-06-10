@@ -1,0 +1,24 @@
+extends layout2
+
+block title
+    title Messages
+
+block style
+    link(rel='stylesheet', href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/flick/jquery-ui.css')
+
+block append scripts
+    script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.js')
+
+block content
+    - count = 0
+    each message in messages
+        - count = count + 1
+        script
+            |$(function() {
+            |   $('#message_#{count}').dialog({
+            |       height: 140,
+            |       modal: true
+            |   });
+            |});
+        div(id='message_' + count) message
+        //- != '<div id="message_' + count + '">' + message + '</div>'
