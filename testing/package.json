@@ -17,6 +17,7 @@
   "author": "Alexey Melnikov",
   "license": "MIT",
   "dependencies": {
+    "should": "^6.0.3",
     "vows": "^0.8.1"
   }
 }
