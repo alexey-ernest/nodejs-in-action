@@ -15,5 +15,8 @@
     "mocha"
   ],
   "author": "Alexey Melnikov",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "vows": "^0.8.1"
+  }
 }
