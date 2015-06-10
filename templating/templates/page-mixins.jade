@@ -1,0 +1,8 @@
+extends layout
+
+block title
+    title Mixings
+
+block content
+    include mixins/list_object_property
+    mixin list_object_property(students, 'name')
