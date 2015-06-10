@@ -1,0 +1,22 @@
+{
+  "name": "templating",
+  "version": "1.0.0",
+  "description": "Templating with Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node.js",
+    "templating",
+    "ejs",
+    "hogan",
+    "jade"
+  ],
+  "author": "Alexey Melnikov",
+  "license": "MIT",
+  "dependencies": {
+    "github-flavored-markdown": "^1.0.1",
+    "hogan": "^1.0.2"
+  }
+}
